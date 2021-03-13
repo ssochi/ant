@@ -1,8 +1,8 @@
 package org.usky.ant.ip;
 
-public class IPWhiteList {
+public class IntSet {
 	private final int[] bitmap = new int[134217728];
-	public IPWhiteList(){
+	public IntSet(){
 
 	}
 	public void add(String ipStr){

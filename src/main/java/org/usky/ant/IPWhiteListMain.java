@@ -9,7 +9,7 @@ import java.util.Random;
 import org.usky.ant.ip.IPFileGenerator;
 import org.usky.ant.ip.IPReader;
 import org.usky.ant.ip.IPUtil;
-import org.usky.ant.ip.IPWhiteList;
+import org.usky.ant.ip.IntSet;
 
 
 public class IPWhiteListMain {
@@ -19,7 +19,7 @@ public class IPWhiteListMain {
 		fileGenerator.generate("ip_list", 1024 * 1024 * 1024);
 
 		System.out.println("build white list ...");
-		IPWhiteList whiteList = new IPWhiteList();
+		IntSet whiteList = new IntSet();
 		try(FileInputStream ism = new FileInputStream("ip_list")){
 			IPReader ipReader = new IPReader(ism);
 			ipReader.foreach(whiteList::add);

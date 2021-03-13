@@ -6,19 +6,19 @@ import java.util.Set;
 
 import org.junit.Test;
 import org.usky.ant.ip.IPUtil;
-import org.usky.ant.ip.IPWhiteList;
+import org.usky.ant.ip.IntSet;
 
 public class TIPWhiteList {
 	@Test
 	public void IPWhiteList() throws Throwable {
-		IPWhiteList ipWhiteList = new IPWhiteList();
+		IntSet intSet = new IntSet();
 		Random rand = new Random();
 		int ip = 0;
 		try{
 			for (int i = 0; i < 99999999; i++) {
 				ip = rand.nextInt();
-				ipWhiteList.add(ip);
-				if (!ipWhiteList.contains(ip)){
+				intSet.add(ip);
+				if (!intSet.contains(ip)){
 					System.out.println("error" + ip);
 				}
 			}
@@ -30,9 +30,9 @@ public class TIPWhiteList {
 
 	@Test
 	public void IPWhiteListSinge(){
-		IPWhiteList ipWhiteList = new IPWhiteList();
+		IntSet intSet = new IntSet();
 		int ip = 2146986841;
-		ipWhiteList.add(ip);
+		intSet.add(ip);
 	}
 
 	public static final int BLACK_TEST_DATA_GROUP_SIZE = 1000000;
@@ -51,7 +51,7 @@ public class TIPWhiteList {
 			}
 		}
 
-		IPWhiteList whiteList = new IPWhiteList();
+		IntSet whiteList = new IntSet();
 		for (String datum : data) {
 			whiteList.add(datum);
 		}
