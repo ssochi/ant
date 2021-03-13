@@ -1,4 +1,4 @@
-package org.usky.ant.ip;
+package org.usky.ant.core;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Random;
 
-import static org.usky.ant.ip.IPUtil.randIpStr;
+import static org.usky.ant.core.IPUtil.randIpStr;
 
 public class IPFileGenerator {
 	public void generate(String path, int size) throws IOException {

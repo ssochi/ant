@@ -1,4 +1,4 @@
-package org.usky.ant.ip;
+package org.usky.ant.core;
 
 import java.io.BufferedReader;
 import java.io.IOException;

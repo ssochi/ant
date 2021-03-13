@@ -5,12 +5,13 @@ import java.util.Random;
 import java.util.Set;
 
 import org.junit.Test;
-import org.usky.ant.ip.IPUtil;
-import org.usky.ant.ip.IntSet;
+import org.usky.ant.core.IPUtil;
+import org.usky.ant.core.IntSet;
+import org.usky.ant.core.IpSet;
 
 public class TIPWhiteList {
 	@Test
-	public void IPWhiteList() throws Throwable {
+	public void IPWhiteList() {
 		IntSet intSet = new IntSet();
 		Random rand = new Random();
 		int ip = 0;
@@ -39,8 +40,8 @@ public class TIPWhiteList {
 	@Test
 	public void IPWhiteListBlack(){
 		Random r = new Random();
-		Set<String> data = new HashSet<String>();
-		Set<String> black = new HashSet<String>();
+		Set<String> data = new HashSet<>();
+		Set<String> black = new HashSet<>();
 		while (data.size() < BLACK_TEST_DATA_GROUP_SIZE){
 			data.add(IPUtil.randIpStr(r));
 		}
@@ -51,7 +52,7 @@ public class TIPWhiteList {
 			}
 		}
 
-		IntSet whiteList = new IntSet();
+		IpSet whiteList = new IpSet();
 		for (String datum : data) {
 			whiteList.add(datum);
 		}
